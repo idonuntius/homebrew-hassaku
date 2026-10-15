@@ -16,14 +16,14 @@ Hassaku は、複数の Android 端末・iPhone/iPad（1 台）・Mac のウィ�
 ## Install
 
 ```sh
-brew install --cask idonuntius/hassaku/hassaku
+brew tap idonuntius/hassaku
+brew trust idonuntius/hassaku
+brew install --cask hassaku
 ```
 
-Use the full name `idonuntius/hassaku/hassaku`: Homebrew taps the repo and, because you named it
-explicitly, trusts this cask. Homebrew loads casks from non-official taps only once they are trusted,
-so `brew tap idonuntius/hassaku` followed by `brew install --cask hassaku` fails with
-`Refusing to load cask … from untrusted tap`. In that case run
-`brew trust --cask idonuntius/hassaku/hassaku` (just this cask) and install again.
+Homebrew loads casks from non-official taps only once you trust them, so `brew trust` is needed
+(otherwise: `Refusing to load cask … from untrusted tap`). It is recorded once and also covers
+`brew upgrade`.
 
 The app is signed with Developer ID and notarized by Apple. It bundles Google's `adb`
 (Android SDK Platform-Tools; its license notices are under **Help** in the app).
